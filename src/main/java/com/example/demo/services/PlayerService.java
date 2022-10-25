@@ -1,7 +1,7 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.Player;
-import com.example.demo.repos.PlayerRepo;
+import com.example.demo.repos.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,21 +11,21 @@ import java.util.Optional;
 @Service
 public class PlayerService {
     @Autowired
-    private PlayerRepo playerRepo;
+    private PlayerRepository playerRepository;
 
-    public void saveByService(Player p){
-        playerRepo.save_new_object(p);
+    public void save(Player p){
+        playerRepository.save(p);
     }
 
-    public Optional<Player> findByIndexByService(String name){
-        return playerRepo.findById(name);
+    public Optional<Player> findById(String name){
+        return playerRepository.findById(name);
     }
 
-    public List<Player> findAllByService(){
-        return playerRepo.findAll();
+    public List<Player> findAll(){
+        return playerRepository.findAll();
     }
 
-    public void deleteBYService(Player p){
-        playerRepo.delete(p);
+    public void delete(Player p){
+        playerRepository.delete(p);
     }
 }

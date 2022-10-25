@@ -1,7 +1,7 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.Club;
-import com.example.demo.repos.ClubRepo;
+import com.example.demo.repos.ClubRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,21 +11,21 @@ import java.util.Optional;
 @Service
 public class ClubService {
     @Autowired
-    private ClubRepo clubRepo;
+    private ClubRepository clubRepository;
 
-    public void saveByService(Club c){
-        clubRepo.save_new_object(c);
+    public void save(Club c){
+        clubRepository.save(c);
     }
 
-    public Optional<Club> findByIndexByService(String name){
-        return clubRepo.findById(name);
+    public Optional<Club> findById(String name){
+        return clubRepository.findById(name);
     }
 
-    public List<Club> findAllByService(){
-        return clubRepo.findAll();
+    public List<Club> findAll(){
+        return clubRepository.findAll();
     }
 
-    public void deleteByService(Club c){
-        clubRepo.delete(c);
+    public void delete(Club c){
+        clubRepository.delete(c);
     }
 }

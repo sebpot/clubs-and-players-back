@@ -21,7 +21,7 @@ public class Club {
     private double budget;
     @Column(name="year_of_foundation")
     private int yearFounded;
-    @OneToMany(mappedBy = "club")
+    @OneToMany(mappedBy = "club", cascade = CascadeType.REMOVE)
     @ToString.Exclude
     @JsonIgnore
     private List<Player> players;

@@ -12,12 +12,12 @@ import java.util.function.Function;
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class CreateClubRequest {
+public class CreateClubEvent {
     private String name;
 
-    public static Function<CreateClubRequest, Club> dtoToEntityMapper() {
-        return request -> Club.builder()
-                .name(request.getName())
+    public static Function<Club, CreateClubEvent> dtoToEntityMapper(){
+        return club -> CreateClubEvent.builder()
+                .name(club.getName())
                 .build();
     }
 }

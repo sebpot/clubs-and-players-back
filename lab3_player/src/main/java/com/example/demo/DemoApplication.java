@@ -13,12 +13,4 @@ public class DemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
-
-	@Bean
-	@Qualifier("club")
-	public RestTemplate restTemplate(){
-		return new RestTemplateBuilder()
-				.rootUri("http://localhost:8080/api/clubs")
-				.build();
-	}
 }

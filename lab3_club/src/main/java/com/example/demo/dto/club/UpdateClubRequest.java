@@ -1,8 +1,6 @@
 package com.example.demo.dto.club;
 
-import com.example.demo.dto.player.UpdatePlayerRequest;
 import com.example.demo.entities.Club;
-import com.example.demo.entities.Player;
 import lombok.*;
 
 import java.util.function.Function;

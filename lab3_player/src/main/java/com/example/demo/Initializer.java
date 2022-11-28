@@ -22,8 +22,6 @@ public class Initializer {
     public void init() throws Exception {
         Club club = new Club();
         club.setName("Real Madryt");
-        club.setBudget(105.5);
-        club.setYearFounded(1902);
         clubService.save(club);
 
         playerService.save(new Player("Toni Kroos", 32, club));
@@ -31,20 +29,15 @@ public class Initializer {
 
         club = new Club();
         club.setName("Barcelona");
-        club.setBudget(34.5);
-        club.setYearFounded(1899);
         clubService.save(club);
 
         playerService.save(new Player("Robert Lewandowski", 34, club));
 
         club = new Club();
         club.setName("Arsenal");
-        club.setBudget(30);
-        club.setYearFounded(1878);
         clubService.save(club);
 
         playerService.save(new Player("Gabriel Jesus", 25, club));
-
     }
 
 }

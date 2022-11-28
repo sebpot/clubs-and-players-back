@@ -21,10 +21,6 @@ public class ClubService {
         return clubRepository.findById(name);
     }
 
-    public List<Club> findAll(){
-        return clubRepository.findAll();
-    }
-
     public void delete(Club c){
         clubRepository.delete(c);
     }

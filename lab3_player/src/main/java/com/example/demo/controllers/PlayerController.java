@@ -43,6 +43,9 @@ public class PlayerController {
     @PostMapping()
     public ResponseEntity<Void> createPlayer(@RequestBody CreatePlayerRequest request){
         Optional<Club> clubOpt = clubService.findById(request.getClubName());
+        if(clubOpt.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
         Player player = CreatePlayerRequest.dtoToEntityMapper(clubOpt::get).apply(request);
         playerService.save(player);
         return ResponseEntity.ok().build();

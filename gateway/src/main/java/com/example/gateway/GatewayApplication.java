@@ -17,12 +17,12 @@ public class GatewayApplication {
 	public RouteLocator customRouteLocator(RouteLocatorBuilder builder){
 		return builder
 				.routes()
-				.route("club", r -> r
+				.route("clubs", r -> r
 						.host("localhost:8080")
 						.and()
 						.path("/api/clubs", "/api/clubs/**")
 						.uri("http://localhost:8081"))
-				.route("player", r -> r
+				.route("players", r -> r
 						.host("localhost:8080")
 						.and()
 						.path("/api/players", "/api/players/**")

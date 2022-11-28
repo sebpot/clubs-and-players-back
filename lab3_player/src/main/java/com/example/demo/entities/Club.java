@@ -17,12 +17,4 @@ import java.util.List;
 public class Club {
     @Id
     private String name;
-    @Column(name="budget")
-    private double budget;
-    @Column(name="year_of_foundation")
-    private int yearFounded;
-    @OneToMany(mappedBy = "club", cascade = CascadeType.REMOVE)
-    @ToString.Exclude
-    @JsonIgnore
-    private List<Player> players;
 }

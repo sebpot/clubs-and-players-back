@@ -14,10 +14,10 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@Bean @Qualifier("player")
+	@Bean @Qualifier("players")
 	public RestTemplate restTemplate(){
 		return new RestTemplateBuilder()
-				.rootUri("http://localhost:8080/api/players")
+				.rootUri("http://localhost:8082/api/event")
 				.build();
 	}
 }

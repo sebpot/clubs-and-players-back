@@ -4,18 +4,12 @@ import com.example.demo.dto.club.CreateClubRequest;
 import com.example.demo.dto.club.GetClubResponse;
 import com.example.demo.dto.club.GetClubsResponse;
 import com.example.demo.dto.club.UpdateClubRequest;
-import com.example.demo.dto.player.GetPlayerResponse;
-import com.example.demo.dto.player.GetPlayersResponse;
-import com.example.demo.dto.player.UpdatePlayerRequest;
 import com.example.demo.entities.Club;
-import com.example.demo.entities.Player;
 import com.example.demo.services.ClubService;
-import com.example.demo.services.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -23,9 +17,6 @@ import java.util.Optional;
 public class ClubController {
     @Autowired
     private ClubService clubService;
-
-    @Autowired
-    private PlayerService playerService;
 
     @GetMapping()
     public ResponseEntity<GetClubsResponse> readClubs(){

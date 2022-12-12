@@ -17,4 +17,7 @@ import java.util.List;
 public class Club {
     @Id
     private String name;
+    @OneToMany(mappedBy = "club", cascade = CascadeType.REMOVE)
+    @JsonIgnore
+    private List<Player> players;
 }

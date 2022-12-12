@@ -31,6 +31,15 @@ public class PlayerController {
         return ResponseEntity.ok(GetPlayersResponse.entityToDtoMapper().apply(playerService.findAll()));
     }
 
+    @GetMapping("/club/{name}")
+    public ResponseEntity<GetPlayersResponse> readPlayersOfClub(@PathVariable String name){
+        Optional<Club> clubOpt = clubService.findById(name);
+        if(clubOpt.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(GetPlayersResponse.entityToDtoMapper().apply(playerService.findAllByCategory(clubOpt.get())));
+    }
+
     @GetMapping("/{name}")
     public ResponseEntity<GetPlayerResponse> getPlayer(@PathVariable String name){
         Optional<Player> playerOpt = playerService.findById(name);

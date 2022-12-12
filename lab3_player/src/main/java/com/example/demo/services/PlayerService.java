@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import com.example.demo.entities.Club;
 import com.example.demo.entities.Player;
 import com.example.demo.repos.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,10 @@ public class PlayerService {
 
     public List<Player> findAll(){
         return playerRepository.findAll();
+    }
+
+    public List<Player> findAllByCategory(Club club){
+        return playerRepository.findAllByClub(club);
     }
 
     public void delete(Player p){

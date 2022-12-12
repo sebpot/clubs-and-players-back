@@ -35,6 +35,9 @@ public class ClubController {
     @PostMapping()
     public ResponseEntity<Void> createClub(@RequestBody CreateClubRequest request){
         Club club = CreateClubRequest.dtoToEntityMapper().apply(request);
+        if(club.getName().isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
         clubService.save(club);
         return ResponseEntity.ok().build();
     }
